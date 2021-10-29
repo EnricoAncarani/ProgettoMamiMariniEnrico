@@ -41,6 +41,8 @@ namespace ProgettoCoppie
                         durata = double.Parse(TXTdurata.Text);
                         titolo = TXTtitolo.Text;
                         autore = TXTautore.Text;
+                        Brano b = new Brano(titolo, autore, durata);
+                        ListaDeiCD[ComboCD.SelectedIndex].addBrano(b);
                     }catch
                     {
                         MessageBox.Show("Creazione non riuscita");
@@ -58,6 +60,7 @@ namespace ProgettoCoppie
                 if (string.IsNullOrEmpty(TXTtitolo.Text) == false)
                 {
                     CD Prova = new CD(titolo, autore);
+                    ListaDeiCD.Add(Prova);
                     AggiornaComboBox();
                 }
             }
@@ -66,6 +69,34 @@ namespace ProgettoCoppie
         {
             ComboCD.ItemsSource = "";
             ComboCD.ItemsSource = ListaDeiCD;
+        }
+
+        private void ComboCD_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(ComboCD.SelectedIndex!=-1)
+            {
+                ComboCD.IsEnabled = true;
+                RaccogliInfo.IsEnabled = true;
+            }
+            else
+            {
+                ComboCD.IsEnabled = false;
+                ComboCD.IsEnabled = false;
+            }
+        }
+
+        private void RaccogliInfo_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(ListaDeiCD[ComboCD.SelectedIndex].Titolo);
+            MessageBox.Show(ListaDeiCD[ComboCD.SelectedIndex].Autore);
+            List<Brano> listaBrani = ListaDeiCD[ComboCD.SelectedIndex].Brani;
+            foreach (Brano b in listaBrani)
+            {
+                MessageBox.Show("\n");
+                MessageBox.Show(b.Titolo);
+                MessageBox.Show(b.Autore);
+                MessageBox.Show(b.Durata);
+            }
         }
     }
 }
