@@ -7,6 +7,13 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Label Content="Titolo" HorizontalAlignment="Left" Margin="85,87,0,0" VerticalAlignment="Top"/>
+        <Label Content="Autore" HorizontalAlignment="Left" Margin="67,128,0,0" VerticalAlignment="Top" Width="58" Height="23"/>
+        <Label Content="Durata" HorizontalAlignment="Left" Margin="79,163,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="141,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="141,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="141,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Aggiungi Brano" HorizontalAlignment="Left" Margin="141,213,0,0" VerticalAlignment="Top" Width="109"/>
+
     </Grid>
 </Window>
