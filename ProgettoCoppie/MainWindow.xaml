@@ -7,13 +7,15 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Label Content="Titolo" HorizontalAlignment="Left" Margin="85,87,0,0" VerticalAlignment="Top"/>
-        <Label Content="Autore" HorizontalAlignment="Left" Margin="67,128,0,0" VerticalAlignment="Top" Width="58" Height="23"/>
-        <Label Content="Durata" HorizontalAlignment="Left" Margin="79,163,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="141,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="141,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="141,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Aggiungi Brano" HorizontalAlignment="Left" Margin="141,213,0,0" VerticalAlignment="Top" Width="109"/>
+        <Label x:Name="TxtTitolo" Content="Titolo" HorizontalAlignment="Left" Margin="85,87,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="TxtAutore" Content="Autore" HorizontalAlignment="Left" Margin="67,128,0,0" VerticalAlignment="Top" Width="58" Height="23"/>
+        <Label x:Name="TxtDurata" Content="Durata" HorizontalAlignment="Left" Margin="79,163,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TXTtitolo" HorizontalAlignment="Left" Height="23" Margin="141,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="TXTautore" HorizontalAlignment="Left" Height="23" Margin="141,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="TXTdurata" HorizontalAlignment="Left" Height="23" Margin="141,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="AggiungiBrano" Content="Aggiungi Brano al CD selezionato" HorizontalAlignment="Left" Margin="153,256,0,0" VerticalAlignment="Top" Width="210" Click="AggiungiBrano_Click"/>
+        <ComboBox x:Name="ComboCD" HorizontalAlignment="Left" Margin="363,128,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="CreaCD" Content="Crea CD" HorizontalAlignment="Left" Margin="141,203,0,0" VerticalAlignment="Top" Width="75" Click="CreaCD_Click"/>
 
     </Grid>
 </Window>

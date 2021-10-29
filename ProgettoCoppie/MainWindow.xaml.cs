@@ -20,9 +20,52 @@ namespace ProgettoCoppie
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<CD> ListaDeiCD;
         public MainWindow()
         {
             InitializeComponent();
+            ListaDeiCD = new List<CD>();
+        }
+
+        private void AggiungiBrano_Click(object sender, RoutedEventArgs e)
+        {
+            string titolo;
+            string autore;
+            double durata;
+            if(string.IsNullOrEmpty(TXTautore.Text)==false)
+            {
+                if (string.IsNullOrEmpty(TXTtitolo.Text) == false)
+                {
+                    try
+                    {
+                        durata = double.Parse(TXTdurata.Text);
+                        titolo = TXTtitolo.Text;
+                        autore = TXTautore.Text;
+                    }catch
+                    {
+                        MessageBox.Show("Creazione non riuscita");
+                    }
+                }
+            }
+        }
+
+        private void CreaCD_Click(object sender, RoutedEventArgs e)
+        {
+            string titolo;
+            string autore;
+            if (string.IsNullOrEmpty(TXTautore.Text) == false)
+            {
+                if (string.IsNullOrEmpty(TXTtitolo.Text) == false)
+                {
+                    CD Prova = new CD(titolo, autore);
+                    AggiornaComboBox();
+                }
+            }
+        }
+        public void AggiornaComboBox()
+        {
+            ComboCD.ItemsSource = "";
+            ComboCD.ItemsSource = ListaDeiCD;
         }
     }
 }
