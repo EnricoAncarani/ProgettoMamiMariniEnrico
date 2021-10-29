@@ -60,5 +60,16 @@ namespace ProgettoCoppie
             Autore = autore;
             Durata = durata;
         }
+
+        public bool shortSong(int durata)
+        {
+            if(_durata < durata) { return true; }
+            else { return false; }            
+        }
+
+        public override string ToString()
+        {
+            return "Titolo: '" + _titolo + "' Autore: " + _autore + " Durata : " + _durata + " secondi";
+        }
     }
 }
